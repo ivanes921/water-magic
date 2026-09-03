@@ -1,0 +1,10 @@
+{
+  "name":"Моё растение — Water Magic",
+  "short_name":"Моё растение",
+  "start_url":"/",
+  "display":"standalone",
+  "background_color":"#f5fbf5",
+  "theme_color":"#dff4e7",
+  "description":"Милый трекер воды с растением",
+  "icons":[{"src":"/icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]
+}
