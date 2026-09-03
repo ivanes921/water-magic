@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#dff4e7" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="Моё растение" />
+  <link rel="manifest" href="/manifest.json" />
+  <link rel="icon" href="/icon.svg" />
+  <link rel="stylesheet" href="/style.css" />
+  <title>Моё растение 🌱</title>
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">WATER MAGIC</p>
+        <h1>Моё растение</h1>
+      </div>
+      <button class="icon-btn" id="settingsBtn" aria-label="Настройки">⚙️</button>
+    </header>
+
+    <section class="plant-card" id="plantCard">
+      <div class="sun">☀️</div>
+      <div class="plant-stage" id="plantStage">
+        <div class="sparkles" id="sparkles">✦　✧　✦</div>
+        <div class="plant" id="plant" aria-label="Растение">
+          <div class="leaf leaf-1"></div><div class="leaf leaf-2"></div>
+          <div class="leaf leaf-3"></div><div class="leaf leaf-4"></div>
+          <div class="stem"></div>
+          <div class="flower"><i></i><i></i><i></i><i></i><b></b></div>
+        </div>
+        <div class="pot"><div class="soil"></div><div class="pot-body"></div></div>
+      </div>
+      <div class="plant-message" id="plantMessage">Доброе утро! Я готово расти вместе с тобой 🌱</div>
+    </section>
+
+    <section class="water-section">
+      <div class="progress-head">
+        <div><span id="waterAmount">0</span> <small>мл</small></div>
+        <div class="goal">цель <strong id="goalAmount">1800</strong> мл</div>
+      </div>
+      <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+      <p class="status" id="statusText">Давай напоим растение 💧</p>
+
+      <div class="quick-add">
+        <button data-amount="150">+150</button>
+        <button data-amount="250" class="primary">+250 <span>мл</span></button>
+        <button data-amount="350">+350</button>
+      </div>
+      <button class="custom-btn" id="customBtn">Другое количество</button>
+    </section>
+
+    <section class="history-card">
+      <div class="section-title"><span>Сегодня</span><span id="percent">0%</span></div>
+      <div class="drops" id="drops"></div>
+    </section>
+
+    <p class="footer-note">Растение не сердится, если ты забыла. Просто напои его, когда вспомнишь ❤️</p>
+  </main>
+
+  <div class="modal hidden" id="customModal">
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-sheet">
+      <button class="close" data-close>×</button>
+      <h2>Сколько воды? 💧</h2>
+      <p>Запиши, сколько ты выпила.</p>
+      <input id="customInput" type="number" min="1" max="3000" step="10" inputmode="numeric" placeholder="250" />
+      <button class="primary wide" id="addCustom">Напоить растение</button>
+    </div>
+  </div>
+
+  <div class="modal hidden" id="settingsModal">
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-sheet">
+      <button class="close" data-close>×</button>
+      <h2>Настройки 🌿</h2>
+      <label>Цель на день<input id="goalInput" type="number" min="500" max="5000" step="50" /></label>
+      <button class="primary wide" id="saveGoal">Сохранить</button>
+      <button class="notify-btn" id="notifyBtn">🔔 Включить напоминания</button>
+      <a class="admin-link" href="/admin.html">Экран разработчика →</a>
+    </div>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>
